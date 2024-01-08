@@ -16,3 +16,16 @@
     <title>PHP 게시판</title>
 </head>
 <body>
+<nav class="col"> <!-- class 에 col 추가 -->
+  <ul class="nav flex-row"> <!-- list 생성란 -->
+    <li class="nav-item icon-link-hover">
+      <a href="article_list.php" class="nav-link active">LIST</a>
+    </li>
+    <li class="nav-item icon-link-hover">
+      <a href="article_form.php" class="nav-link">WRITE</a>
+    </li>
+    <li class="nav-item icon-link-hover">
+      <a href="#" class="nav-link">EDIT</a>
+    </li>
+  </ul>
+</nav>

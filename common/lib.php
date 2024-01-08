@@ -8,4 +8,7 @@ function warn_back($msg) { // 경고문을 띄우고 뒤로 가게 하는 함수
     ";
     exit;
 }
+function _goto ($url) {
+  echo "<meta http-equiv='refresh' content='0;url=".$url."' />";
+}
 ?>

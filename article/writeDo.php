@@ -7,7 +7,7 @@ $title = $_POST['title'];
 $body = $_POST['body'];
 $author = $_POST['author'];
 
-// 빈 값을 검사하기 위한 조건문
+// 빈 값을 검사하기 위한 조건문(NotBlank)
 if (empty($title)) { warn_back("제목을 작성해 주세요."); } // 제목란이 비어있다면 lib문서의 warn_back을 작동시켜 validation을 수행
 if (empty($body)) { warn_back("내용을 작성해 주세요."); } // 내용란이 비어있다면 lib문서의 warn_back을 작동시켜 validation을 수행
 if (empty($author)) { warn_back("작성자 이름을 작성해 주세요."); } // 작성자란이 비어있다면 lib문서의 warn_back을 작동시켜 validation을 수행
@@ -23,7 +23,7 @@ try {
     $result = $stmt->execute();
 
     if ($result) {
-        echo "ok";
+      _goto("../article/article_list.php");
     } else {
         print_r($db->errorInfo());
     }
