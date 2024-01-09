@@ -1,6 +1,6 @@
 <!-- writeDo.php -->
 <?php 
-include_once "../global/dbconn.php";  /* db연결설정 파일 포함. */
+include_once "../inc/global/dbconn.php";  /* db연결설정 파일 포함. */
 include_once "../common/lib.php";  /* validation 경고메시지 */ 
 
 $title = $_POST['title'];

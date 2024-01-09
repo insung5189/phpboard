@@ -2,7 +2,6 @@
 * {
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
   list-style: none;
 
 }
@@ -18,5 +17,4 @@ nav {
 
 section {
   padding: 0 16px;
-  border-left : 1px solid #262626
 }
