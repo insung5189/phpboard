@@ -19,3 +19,7 @@ nav {
 section {
   padding: 0 16px;
 }
+
+.border1 {
+  border: 1px;
+}

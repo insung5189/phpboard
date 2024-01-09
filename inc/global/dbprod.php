@@ -1,7 +1,7 @@
 <!-- dbprod.php(DB생성 설정파일) -->
-<?php include_once ($_SERVER['DOCUMENT_ROOT']."/inc/head.php"); /* html 여는 파일 */ ?> 
-<?php include_once ($_SERVER['DOCUMENT_ROOT']."/inc/common/lib.php");  /* 함수모음 라이브러리 */ ?>
 <?php 
+include_once ($_SERVER['DOCUMENT_ROOT']."/inc/head.php"); /* html 여는 파일 */ 
+include_once ($_SERVER['DOCUMENT_ROOT']."/inc/common/lib.php");  /* 함수모음 라이브러리 */ 
 
 $host = "localhost";
 $user = "root";
@@ -53,20 +53,39 @@ try {
                         <script>
                             alert('데이터 입력 완료');
                         </script>
-                    ";
-                    _goto("/article/article_list.php");
+                        ";
+                        _goto("/article/article_list.php");
                     } else {
-                        echo "데이터 입력 실패: " . $conn->error;
+                        echo "
+                        <script>
+                            alert('데이터 입력 실패 : ".$conn->error."');
+                        </script>
+                        ";
                     }
                 } else {
-                    echo "테이블 생성 실패: " . $conn->error;
+                    echo "
+                    <script>
+                        alert('테이블 생성 실패 : ".$conn->error."');
+                    </script>
+                    ";
                 }
             } else {
-                echo "데이터베이스 생성 실패: " . $conn->error;
+                echo "
+                <script>
+                    alert('데이터베이스 생성 실패 : ".$conn->error."');
+                </script>
+                ";
             }
-        } else {
-            echo "데이터베이스 $dbn 이미 존재함<br>";
         }
+        /* 
+        else {
+            echo "
+            <script>
+                alert('DB : ".$dbn." 가 이미 존재함');
+            </script>
+            ";
+        }
+        */
     
     // 데이터베이스 연결
     $db = new PDO('mysql:host='.$host.';dbname='.$dbn, $user, $pwd);
@@ -74,5 +93,5 @@ try {
     print $e->getMessage(); // 데이터베이스관련 에러메시지 출력용
     die(); // 데이터베이스 연결 종료
 }
-?> 
-<?php include_once ($_SERVER['DOCUMENT_ROOT']."/inc/tail.php"); /* html 닫는 파일 */ ?>
+
+include_once ($_SERVER['DOCUMENT_ROOT']."/inc/tail.php"); /* html 닫는 파일 */ ?>

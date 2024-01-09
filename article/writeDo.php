@@ -1,7 +1,8 @@
 <!-- writeDo.php -->
-<?php include_once ($_SERVER['DOCUMENT_ROOT']."/inc/global/dbconn.php");  /* db연결설정 파일 포함. */?>
-<?php include_once ($_SERVER['DOCUMENT_ROOT']."/inc/common/lib.php");  /* 함수모음 라이브러리 */ ?>
 <?php 
+include_once ($_SERVER['DOCUMENT_ROOT']."/inc/global/dbprod.php");  /* db연결설정 파일 포함. */
+include_once ($_SERVER['DOCUMENT_ROOT']."/inc/common/lib.php");  /* 함수모음 라이브러리 */
+
 // 한국 표준 시간대로 타임존을 설정
 date_default_timezone_set('Asia/Seoul');
 
@@ -27,18 +28,18 @@ try { // 실질적으로 입력받은 값들을 INSERT INTO 쿼리를 이용하�
     $result = $stmt->execute(); // execute() 함수로 쿼리실행
 
     if ($result) {
-      _goto("../article/article_list.php");
-      echo "
-      <script>
-      alret('게시글이 등록되었습니다.');
-      </script>
-      ";
-    } else {
         echo "
         <script>
-        alret('게시글 등록에 실패하였습니다.');
+            alert('게시글이 정상적으로 등록되었습니다.');
         </script>
         ";
+    _goto("/article/article_list.php");
+          } else {
+            echo "
+            <script>
+                alert('게시글 등록에 실패하였습니다.');
+            </script>
+            ";
         print_r($db->errorInfo());
     }
 
