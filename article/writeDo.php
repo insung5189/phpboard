@@ -1,8 +1,7 @@
 <!-- writeDo.php -->
+<?php include_once ($_SERVER['DOCUMENT_ROOT']."/inc/global/dbconn.php");  /* db연결설정 파일 포함. */?>
+<?php include_once ($_SERVER['DOCUMENT_ROOT']."/inc/common/lib.php");  /* 함수모음 라이브러리 */ ?>
 <?php 
-include_once "../inc/global/dbconn.php";  /* db연결설정 파일 포함. */
-include_once "../inc/common/lib.php";  /* validation 경고메시지 */ 
-
 // 한국 표준 시간대로 타임존을 설정
 date_default_timezone_set('Asia/Seoul');
 
@@ -19,6 +18,7 @@ if (empty($author)) { warn_back("작성자 이름을 작성해 주세요."); } /
 
 
 try { // 실질적으로 입력받은 값들을 INSERT INTO 쿼리를 이용하여 DB에 입력하는 과정
+
     $stmt = $db->prepare("INSERT INTO `article`(title, body, author, createDate) VALUES(:title, :body, :author, :createDate)");
     $stmt->bindParam(":title", $title, PDO::PARAM_STR);
     $stmt->bindParam(":body", $body, PDO::PARAM_STR);
@@ -27,8 +27,18 @@ try { // 실질적으로 입력받은 값들을 INSERT INTO 쿼리를 이용하�
     $result = $stmt->execute(); // execute() 함수로 쿼리실행
 
     if ($result) {
+        echo "
+        <script>
+        alret('게시글이 등록되었습니다.');
+        </script>
+        ";
       _goto("../article/article_list.php");
     } else {
+        echo "
+        <script>
+        alret('게시글 등록에 실패하였습니다.');
+        </script>
+        ";
         print_r($db->errorInfo());
     }
 
