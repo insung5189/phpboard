@@ -27,12 +27,12 @@ try { // 실질적으로 입력받은 값들을 INSERT INTO 쿼리를 이용하�
     $result = $stmt->execute(); // execute() 함수로 쿼리실행
 
     if ($result) {
-        echo "
-        <script>
-        alret('게시글이 등록되었습니다.');
-        </script>
-        ";
       _goto("../article/article_list.php");
+      echo "
+      <script>
+      alret('게시글이 등록되었습니다.');
+      </script>
+      ";
     } else {
         echo "
         <script>

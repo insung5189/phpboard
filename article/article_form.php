@@ -1,5 +1,5 @@
 <!-- article_form.php -->
-<?php include_once "../inc/head.php"; /* html 여는 파일(레이아웃용 헤더 공통화를 위함) */ ?>
+<?php include_once ($_SERVER['DOCUMENT_ROOT']."/inc/head.php"); /* html 여는 파일(레이아웃용 헤더 공통화를 위함) */ ?>
 <div class="flex-row">
   <div class="col">
     <!-- class 에 row 추가 -->
@@ -38,4 +38,4 @@
     </section>
   </div>
 </div>
-<?php include_once "../inc/tail.php"; /* html 닫는 파일(레이아웃용 꼬리 공통화를 위함) */ ?>
+<?php include_once ($_SERVER['DOCUMENT_ROOT']."/inc/tail.php"); /* html 닫는 파일(레이아웃용 꼬리 공통화를 위함) */ ?>

@@ -1,6 +1,6 @@
 <!-- article_list.php -->
-<?php include_once "../inc/global/dbprod.php"; /* db연결설정 파일 포함. */ ?> 
-<?php include_once "../inc/head.php"; /* html 여는 파일 */ ?> 
+<?php include_once ($_SERVER['DOCUMENT_ROOT']."/inc/global/dbprod.php"); /* db연결설정 파일 포함. */ ?> 
+<?php include_once ($_SERVER['DOCUMENT_ROOT']."/inc/head.php"); /* html 여는 파일 */ ?> 
 <?php
         $stmt = $db->prepare("SELECT * FROM `article` ORDER BY id DESC"); // article엔티티를 조회하는 쿼리 작성
         $stmt->execute(); // 쿼리 실행
@@ -21,4 +21,4 @@
         // view 용 :: $stmt->fetch();
         // print_r($result);
     ?>
-<?php include_once "../inc/tail.php"; /* html 닫는 파일 */ ?> 
+<?php include_once ($_SERVER['DOCUMENT_ROOT']."/inc/tail.php"); /* html 닫는 파일 */ ?> 
