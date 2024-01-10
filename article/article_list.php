@@ -30,11 +30,13 @@ include_once ($_SERVER['DOCUMENT_ROOT']."/inc/head.php"); /* html 여는 파일 
             echo "
             <table style=\"border:solid 1px; width:1000px; text-align:center;\">
                 <tr style=\"border:solid 1px; \">
-                    <td style=\"border:solid 1px; width:60px;\">".$id."</td>
-                    <td style=\"border:solid 1px; width:300px;\">".$title."</td>
-                    <td style=\"border:solid 1px; width:180px;\">".$createDate."</td>
-                    <td style=\"border:solid 1px; width:180px;\">".$modifyDate."</td>
-                    <td style=\"border:solid 1px; width:100px;\">".$author."</td>
+                    <a href=\"\">
+                        <td style=\"border:solid 1px; width:60px;\">".$id."</td>
+                        <td style=\"border:solid 1px; width:300px;\">".$title."</td>
+                        <td style=\"border:solid 1px; width:180px;\">".$createDate."</td>
+                        <td style=\"border:solid 1px; width:180px;\">".$modifyDate."</td>
+                        <td style=\"border:solid 1px; width:100px;\">".$author."</td>
+                    </a>
                 </tr>
             </table>
             ";
