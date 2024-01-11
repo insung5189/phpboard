@@ -46,9 +46,16 @@ if (isset($_GET['id'])) {
     <hr>
     <p><?php echo $body; ?></p>
 </div>
+
 <button>
     <a href="/article/article_edit.php?id=<?php echo $id; ?>">
-    수정하기
+    <?php echo $id; ?>번 게시글 수정하기
+    </a>
+</button>
+
+<button>
+    <a href="/article/article_delete.php?id=<?php echo $id; ?>">
+    <?php echo $id; ?>번 게시글 삭제하기
     </a>
 </button>
 

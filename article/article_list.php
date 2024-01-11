@@ -21,9 +21,12 @@ foreach ($stmt->fetchAll(PDO::FETCH_ASSOC) as $row) { // PDO를 이용하여 조
     $author = $row["author"];
     $createDate = $row["createDate"];
     $modifyDate = $row["modifyDate"];
+    $modified = "(수정됨)";
     if (!$modifyDate) {
         $modifyDate = "-";
+        $modified = " ";
     }
+    
     ?>
     <tr style="border:solid 1px;">
         <td style="border:solid 1px; width:60px;">
@@ -33,7 +36,7 @@ foreach ($stmt->fetchAll(PDO::FETCH_ASSOC) as $row) { // PDO를 이용하여 조
         </td>
         <td style="border:solid 1px; width:300px;">
             <a href="/article/article_detail.php?id=<?php echo $id; ?>">
-                <?php echo $title; ?>
+                <?php echo $modified . $title; ?>
             </a>
         </td>
         <td style="border:solid 1px; width:180px;">

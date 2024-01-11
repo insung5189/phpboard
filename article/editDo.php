@@ -23,7 +23,7 @@ if (isset($_POST['id'])) {
         if (empty($body)) { warn_back("내용을 작성해 주세요."); } // 내용란이 비어있다면 lib문서의 warn_back을 작동시켜 validation을 수행
         if (empty($author)) { warn_back("작성자 이름을 작성해 주세요."); } // 작성자란이 비어있다면 lib문서의 warn_back을 작동시켜 validation을 수행
 
-        $stmt = $db->prepare("UPDATE `article` SET title = '(수정됨)' :title, body = :body, author = :author, modifyDate = :modifyDate WHERE id = :id");
+        $stmt = $db->prepare("UPDATE `article` SET title = :title, body = :body, author = :author, modifyDate = :modifyDate WHERE id = :id");
         $stmt->bindParam(':id', $id, PDO::PARAM_INT);
         $stmt->bindParam(":title", $title, PDO::PARAM_STR);
         $stmt->bindParam(":body", $body, PDO::PARAM_STR);
@@ -34,14 +34,14 @@ if (isset($_POST['id'])) {
         if ($result) {
             echo "
             <script>
-                alert('게시글이 정상적으로 등록되었습니다.');
+                alert('게시글이 정상적으로 수정되었습니다.');
             </script>
             ";
         _goto("/article/article_list.php");
               } else {
                 echo "
                 <script>
-                    alert('게시글 등록에 실패하였습니다.');
+                    alert('게시글 수정에 실패하였습니다.');
                 </script>
                 ";
             print_r($db->errorInfo());
