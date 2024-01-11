@@ -23,7 +23,7 @@
       <a href="/article/article_form.php" class="nav-link">WRITE</a>
     </li>
     <li class="nav-item icon-link-hover">
-      <a href="#" class="nav-link">EDIT</a>
+      <a href="/article/article_edit.php" class="nav-link">EDIT</a>
     </li>
     <li class="nav-item icon-link-hover">
       <a href="/" class="nav-link">HOME</a>
