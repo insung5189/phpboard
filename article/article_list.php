@@ -1,6 +1,6 @@
 <!-- article_list.php -->
 <?php 
-include_once ($_SERVER['DOCUMENT_ROOT']."/inc/global/dbprod.php"); /* db연결설정 파일 포함. */
+include_once ($_SERVER['DOCUMENT_ROOT']."/inc/global/dbconn.php"); /* db연결설정 파일 포함. */
 include_once ($_SERVER['DOCUMENT_ROOT']."/inc/head.php"); /* html 여는 파일 */
 
 $stmt = $db->prepare("SELECT * FROM `article` ORDER BY id DESC"); // article엔티티를 조회하는 쿼리 작성

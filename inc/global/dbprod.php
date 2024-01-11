@@ -79,7 +79,7 @@ try {
             echo "<script>alert('데이터 입력 실패 : " . $conn->error . "');</script>";
         }
     }
-
+    _goto("/article/article_list.php");
     // 데이터베이스 연결
     $db = new PDO('mysql:host='.$host.';dbname='.$dbn, $user, $pwd);
 } catch (PDOException $e) {

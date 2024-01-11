@@ -23,13 +23,10 @@
       <a href="/article/article_form.php" class="nav-link">WRITE</a>
     </li>
     <li class="nav-item icon-link-hover">
-      <a href="/article/article_edit.php" class="nav-link">EDIT</a>
-    </li>
-    <li class="nav-item icon-link-hover">
       <a href="/" class="nav-link">HOME</a>
     </li>
     <li class="nav-item icon-link-hover">
-      <a href="/inc/global/dbprod.php" class="nav-link">DB생성</a>
+      <a href="/inc/global/dbprod.php" class="nav-link">초기화</a>
     </li>
   </ul>
 </nav>
