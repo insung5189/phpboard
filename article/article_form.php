@@ -2,6 +2,7 @@
 <?php include_once ($_SERVER['DOCUMENT_ROOT']."/inc/head.php"); /* html 여는 파일(레이아웃용 헤더 공통화를 위함) */ ?>
 <div class="flex-row">
   <div class="col">
+    <h1 class="ml-2 mv-4">글 작성하기</h1>
     <!-- class 에 row 추가 -->
     <section class="col-10">
       <form action="writeDo.php" method="post">
