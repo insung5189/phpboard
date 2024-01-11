@@ -27,7 +27,6 @@ include_once($_SERVER['DOCUMENT_ROOT'] . "/inc/common/lib.php");
                         echo "
                             alert('게시글이 정상적으로 삭제되었습니다.');
                         ";
-                        _move('/article/article_list.php');
                     } else {
                         echo "
                             alert('게시글 삭제에 실패하였습니다.');
@@ -39,7 +38,6 @@ include_once($_SERVER['DOCUMENT_ROOT'] . "/inc/common/lib.php");
                     echo "
                         alert('게시글이 존재하지 않습니다.');
                     ";
-                    echo "_goto('/article/article_list.php');";
                 }
             } catch (PDOException $e) {
                 print $e->getMessage();
@@ -53,7 +51,6 @@ include_once($_SERVER['DOCUMENT_ROOT'] . "/inc/common/lib.php");
         ?>
     } else {
         alert("게시글이 삭제되지 않았습니다.");
-        location.href="/article/article_list.php";
     }
 </script>
 <?php include_once ($_SERVER['DOCUMENT_ROOT']."/inc/tail.php"); /* html 닫는 파일 */ ?>
