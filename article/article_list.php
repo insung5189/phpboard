@@ -29,27 +29,27 @@ foreach ($stmt->fetchAll(PDO::FETCH_ASSOC) as $row) { // PDO를 이용하여 조
     
     ?>
     <tr style="border:solid 1px;">
-        <td style="border:solid 1px; width:60px;">
+        <td style="border:solid 1px; min-width:60px; width:auto;">
             <a href="/article/article_detail.php?id=<?php echo $id; ?>">
                 <?php echo $id; ?>
             </a>
         </td>
-        <td style="border:solid 1px; width:300px;">
+        <td style="border:solid 1px; min-width:300px; width:auto;">
             <a href="/article/article_detail.php?id=<?php echo $id; ?>">
                 <?php echo $modified . $title; ?>
             </a>
         </td>
-        <td style="border:solid 1px; width:180px;">
+        <td style="border:solid 1px; min-width:180px; width:auto;">
             <a href="/article/article_detail.php?id=<?php echo $id; ?>">
                 <?php echo $createDate; ?>
             </a>
         </td>
-        <td style="border:solid 1px; width:180px;">
+        <td style="border:solid 1px; min-width:180px; width:auto;">
             <a href="/article/article_detail.php?id=<?php echo $id; ?>">
                 <?php echo $modifyDate; ?>
             </a>
         </td>
-        <td style="border:solid 1px; width:100px;">
+        <td style="border:solid 1px; min-width:100px; width:auto;">
             <a href="/article/article_detail.php?id=<?php echo $id; ?>">
                 <?php echo $author; ?>
             </a>
@@ -58,7 +58,6 @@ foreach ($stmt->fetchAll(PDO::FETCH_ASSOC) as $row) { // PDO를 이용하여 조
 <?php
 }
 ?>
-
 </table>
 
 <?php

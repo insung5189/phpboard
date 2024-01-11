@@ -17,6 +17,9 @@ try {
         die("<script>alert('연결 실패: " . $conn->connect_error . "');</script>");
     }
 
+    $dbDrop = "DROP DATABASE IF EXISTS `$dbn`";
+    $conn->query($dbDrop);
+
     // 데이터베이스가 존재하는지 확인하는 쿼리
     $query = "SELECT SCHEMA_NAME FROM information_schema.SCHEMATA WHERE SCHEMA_NAME = '$dbn'";
     $result = $conn->query($query);

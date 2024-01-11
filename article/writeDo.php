@@ -1,6 +1,6 @@
 <!-- writeDo.php -->
 <?php 
-include_once ($_SERVER['DOCUMENT_ROOT']."/inc/global/dbprod.php");  /* db연결설정 파일 포함. */
+include_once ($_SERVER['DOCUMENT_ROOT']."/inc/global/dbconn.php");  /* db연결설정 파일 포함. */
 include_once ($_SERVER['DOCUMENT_ROOT']."/inc/common/lib.php");  /* 함수모음 라이브러리 */
 
 // 한국 표준 시간대로 타임존을 설정
