@@ -4,7 +4,7 @@ include_once($_SERVER['DOCUMENT_ROOT'] . "/inc/head.php");
 include_once($_SERVER['DOCUMENT_ROOT'] . "/inc/common/lib.php");
 ?>
 <script>
-    var ok = confirm("삭제할겨?");
+    var ok = confirm("정말로 삭제하시겠습니까?");
     if (ok) {
         <?php
         if (isset($_GET['id'])) {
@@ -26,10 +26,13 @@ include_once($_SERVER['DOCUMENT_ROOT'] . "/inc/common/lib.php");
                     if ($result) {
                         echo "
                             alert('게시글이 정상적으로 삭제되었습니다.');
+                            location.href='/article/article_list.php';
                         ";
+                        
                     } else {
                         echo "
                             alert('게시글 삭제에 실패하였습니다.');
+                            location.href='/article/article_list.php';
                         ";
                         print_r($db->errorInfo());
                     }
@@ -37,6 +40,7 @@ include_once($_SERVER['DOCUMENT_ROOT'] . "/inc/common/lib.php");
                     // 게시물이 존재하지 않을 경우 처리
                     echo "
                         alert('게시글이 존재하지 않습니다.');
+                        location.href='/article/article_list.php';
                     ";
                 }
             } catch (PDOException $e) {
@@ -45,12 +49,15 @@ include_once($_SERVER['DOCUMENT_ROOT'] . "/inc/common/lib.php");
             }
         } else {
             // id 파라미터가 전달되지 않은 경우 처리
-            echo "alert('잘못된 접근입니다.');";
-            echo "_goto('/article/article_list.php');";
+            echo "
+            alert('잘못된 접근입니다.');
+            location.href='/article/article_list.php';
+            ";
         }
         ?>
     } else {
         alert("게시글이 삭제되지 않았습니다.");
+        location.href='/article/article_list.php';
     }
 </script>
 <?php include_once ($_SERVER['DOCUMENT_ROOT']."/inc/tail.php"); /* html 닫는 파일 */ ?>
